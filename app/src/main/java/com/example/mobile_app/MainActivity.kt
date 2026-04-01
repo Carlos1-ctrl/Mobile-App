@@ -1,47 +1,25 @@
 package com.example.mobile_app
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.mobile_app.ui.theme.MobileAppTheme
+import com.example.mobile_app.data.datastore.FavoritesManager
+import com.example.mobile_app.data.repository.UserRepository
+import com.example.mobile_app.ui.navegation.AppNav
+import com.example.mobile_app.viewmodel.UserViewModel
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        val repo = UserRepository()
+        val fav = FavoritesManager(applicationContext)
+        val vm = UserViewModel(repo, fav)
+
         setContent {
-            MobileAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            AppNav(vm)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MobileAppTheme {
-        Greeting("Android")
     }
 }
