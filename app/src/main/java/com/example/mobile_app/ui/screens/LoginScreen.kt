@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.example.mobile_app.viewmodel.LoginViewModel
@@ -110,7 +111,7 @@ fun LoginScreen(nav: NavController, vm: LoginViewModel) {
                         onValueChange = {vm.password= it},
                         label = { Text("Contraseña") },
                         leadingIcon = {
-                            Icon(Icons.Default.Email, contentDescription = null, tint = AccentGlow)
+                            Icon(Icons.Default.Lock, contentDescription = null, tint = AccentGlow)
                         },
                         visualTransformation = PasswordVisualTransformation(),
                         isError = vm.passwordError != null,

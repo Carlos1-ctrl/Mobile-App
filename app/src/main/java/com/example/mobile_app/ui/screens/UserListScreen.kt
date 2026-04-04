@@ -117,7 +117,7 @@ fun UserListScreen(nav: NavController, vm: UserViewModel) {
                         onDelete = { vm.deleteUser(user) },
                         onFav = { vm.toggleFavorite(user) }
                     )
-                    if (!showFavorites && user == vm.users.last()) vm.loadUsers()
+                    if (!showFavorites && user == vm.users.last() && !vm.loading) vm.loadUsers()
                 }
             }
         }

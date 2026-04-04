@@ -34,7 +34,7 @@ fun CameraCapture(){
         hasCameraPermission = granted
     }
     val photoFile = remember {
-        File(context.filesDir, "photo_${System.currentTimeMillis()}.jgp")
+        File(context.filesDir, "photo_${System.currentTimeMillis()}.jpg")
     }
     val uri = remember {
         FileProvider.getUriForFile(
