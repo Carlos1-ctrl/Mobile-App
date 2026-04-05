@@ -7,6 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
+
+/**
+ * Composable que muestra un banner de error rojo
+ * Se muestra en la parte superior de la pantalla cuando hay un error
+ * @param message es el Mensaje de error a motrar
+ */
 @Composable
 fun ErrorBanner(message: String){
     Box(

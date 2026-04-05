@@ -24,6 +24,14 @@ import com.example.mobile_app.ui.components.UserItem
 import com.example.mobile_app.ui.theme.*
 import com.example.mobile_app.viewmodel.UserViewModel
 
+
+/**
+ * Pantalla principal que muestra la lista de usuarios
+ * Permite filtrar por genero, ver favoritos, eliminar usarios
+ * y cargar otros 10 usuarios cada vez que llega al final de la lista
+ * @param nav es el controlador de navegacion
+ * @param vm Viewmodel que provee el estado de la pantalla
+ */
 @Composable
 fun UserListScreen(nav: NavController, vm: UserViewModel) {
     var showFavorites by remember { mutableStateOf(false) }
@@ -125,6 +133,12 @@ fun UserListScreen(nav: NavController, vm: UserViewModel) {
         }
     }
 
+/**
+ * Boton de filtro reutilizable para la pantalla de lista.
+ * @param text Texto del boton
+ * @param modifier Modifier opcional
+ * @param onClick Callback al hacer click
+ */
 @Composable
 fun FilterButton(text: String, modifier:Modifier=Modifier, onClick :() -> Unit){
 Button(

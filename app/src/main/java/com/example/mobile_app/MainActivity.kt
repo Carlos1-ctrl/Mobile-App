@@ -13,8 +13,17 @@ import com.example.mobile_app.ui.theme.MobileAppTheme
 import com.example.mobile_app.viewmodel.UserViewModel
 import com.example.mobile_app.viewmodel.UserViewModelFactory
 
-class MainActivity : ComponentActivity() {
+/**
+ * Actividad principal de la app.
+ * Inicializa las dependencias, solicita permisos necesarios
+ * y configura el ViewModel usando ViewModelProvider con Factory.
+ */
 
+class MainActivity : ComponentActivity() {
+    /**
+     * Launcher para solicitar múltiples permisos al mismo tiempo.
+     * Los permisos individuales se manejan en cada pantalla.
+     */
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { }

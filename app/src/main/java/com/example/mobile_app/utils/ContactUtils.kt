@@ -6,6 +6,14 @@ import android.provider.ContactsContract
 import android.widget.Toast
 import com.example.mobile_app.data.model.User
 
+/**
+ * Guarda la informacion de contacto de un usuario en la agenda del dispositivo.
+ * Inserta nombre, telefono y email usando ContentProviderOperation.
+ * Muestra un Toast de confirmacion o error segun el resultado
+ * @param context Contexto de la aplicaicon
+ * @param user Usuario cuyos datos se guardaran como contacto
+ */
+
 fun saveContact(context: Context, user: User) {
     try {
         val ops = arrayListOf<ContentProviderOperation>()

@@ -31,7 +31,6 @@ import java.io.File
  * Composable que permite tomar una foto y mostrarla.
  * La foto se guarda de forma persistente asociada al email del usuario.
  * Cada foto nueva usa un archivo con timestamp para evitar caché de Coil.
- *
  * @param userEmail Email del usuario para asociar la foto
  */
 @Composable

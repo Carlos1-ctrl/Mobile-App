@@ -9,7 +9,17 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+/**
+ * Extencion de Context para acceder al DataStorage de favoritos
+ */
 val Context.dataStore by preferencesDataStore("favorites")
+
+/**
+ * Maneja la persistencia de usuario favoritos usando DataStore.
+ * Guarda tanto los emails como los objetos completos en Json
+ * para que los favooritos persistan en la aplicacion
+ * @param context da el Contexto de la aplicacion
+ */
 
 class FavoritesManager(private val context: Context) {
 
@@ -28,6 +38,12 @@ class FavoritesManager(private val context: Context) {
             val type = object : TypeToken<List<User>>() {}.type
             gson.fromJson(json, type) ?: emptyList()
         }
+
+    /**
+     * Agrega o quita un usuario de favoritos.
+     * Actualiza tanto el Set de emails como el JSON del usuario completos
+     * @param user Usuario a togglear
+     */
 
     suspend fun toggleFavorite(user: User) {
         context.dataStore.edit { prefs ->

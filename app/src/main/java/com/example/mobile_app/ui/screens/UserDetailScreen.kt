@@ -45,6 +45,19 @@ import com.example.mobile_app.utils.saveContact
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.launch
 
+
+/**
+ * Pantalla que muestra el detalle del usuario
+ * Muestra innformacion completa del usuario y permite:
+ * -Compartir contacto en whatsapp
+ * -Guardar contacto en contactos
+ * -Exportar Informacion en PDF
+ * -Ver ubicacion en Google Maps
+ * -Tomar fotografia persistente
+ * -Validar Credenciales del Usuario con un formulario
+ * @param user Usuario a mostrar
+ * @param nav Controlador de navegacion para volver a la lista
+ */
 @SuppressLint("MissingPermission")
 @Composable
 fun UserDetailScreen(user: User, nav: NavController) {
@@ -322,6 +335,13 @@ Scaffold(
     }
 }
 }
+
+/**
+ * filtra la informacion con icono y texto.
+ * Usada dentro de la card de detalle usuario
+ * @param icon Emoji o icono como String
+ * @param text Texto a mostrar
+ */
 @Composable
 fun InfoRow(icon: String, text: String) {
     Row(
@@ -337,6 +357,12 @@ fun InfoRow(icon: String, text: String) {
     HorizontalDivider(color = DarkSurface, thickness = 0.5.dp)
 }
 
+/**
+ * Boton de accion reutilizable con color personalizado.
+ * @param text Texto del boton
+ * @param color Color principal del boton
+ * @param onClick Callback al hacer click
+ */
 @Composable
 fun ActionButton(text: String, color: androidx.compose.ui.graphics.Color, onClick: () -> Unit) {
     Button(

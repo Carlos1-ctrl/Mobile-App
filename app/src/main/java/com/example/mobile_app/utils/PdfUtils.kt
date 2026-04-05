@@ -13,6 +13,14 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 
+/**
+ * Genera un archivo PDF con la informacion del usuario y lo guarda
+ * en la carpeta de Descargas del dispositivo.
+ * Usa MediaStore para Android 10+ y FileOutputStream para versiones anteriores
+ * @param context Contexto de la aplicacion
+ * @param user Usuario cuya informacion se exportara a PDF
+ */
+
 fun createPdf(context: Context, user: User) {
     try {
         val pdf = PdfDocument()

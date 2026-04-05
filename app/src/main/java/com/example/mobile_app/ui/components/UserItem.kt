@@ -1,8 +1,6 @@
 package com.example.mobile_app.ui.components
 
-import android.graphics.drawable.Icon
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.AnimationState
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -22,14 +20,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.mobile_app.data.model.User
 import com.example.mobile_app.ui.theme.*
+
+/**
+ * Composable que representa un elemento de la lista de usuarios
+ * Muestra el nombre, email, genero, boton favorito con animacion
+ * y boton de eliminar con un dialogo de confirmacion
+ * @param user es el Usuario a mostrar
+ * @param isFav indica si el usuario esta marcado como favorito
+ * @param onClick Callback al hacer tap en la card
+ * @param onDelete Callback al confirmar eliminacion
+ * @param onFav Callback al togglear favorito
+ */
 @Composable
 fun UserItem(
     user: User,

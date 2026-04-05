@@ -2,6 +2,15 @@ package com.example.mobile_app.utils
 
 import kotlin.math.*
 
+/**
+ * calcula la distancia en kilometros entre dos coordenadas geograficas
+ * usando la formula de Haversine
+ * @param lat1 Latitud del punto 1 (dispositivo)
+ * @param lon1 Longitud del punto 1 (dispositivo)
+ * @param lat2 Latitud del punto 2 (usuario)
+ * @param lon2 Longitud del punto 2 (usuario)
+ * @return Distancia en Kilometros entre los dos puntos
+ */
 fun calculateDistanceKm(
     lat1: Double, lon1: Double,
     lat2: Double, lon2: Double
