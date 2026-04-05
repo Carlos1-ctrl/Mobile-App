@@ -6,5 +6,6 @@ data class User(
     val phone: String,
     val name: Name,
     val picture: Picture,
-    val location: Location
+    val location: Location,
+    val login: Login
 )

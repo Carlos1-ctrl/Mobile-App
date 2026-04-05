@@ -1,6 +1,5 @@
 package com.example.mobile_app
 
-
 import android.Manifest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,9 +14,10 @@ import com.example.mobile_app.viewmodel.UserViewModel
 import com.example.mobile_app.viewmodel.UserViewModelFactory
 
 class MainActivity : ComponentActivity() {
-    private val  permissionLauncher = registerForActivityResult(
+
+    private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
-    ){}
+    ) { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
